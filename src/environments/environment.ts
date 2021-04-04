@@ -3,7 +3,9 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  authToken: 'GDICpf4JbGNyyHtrYBx42cTzPHOnnyC0',
+  path: 'https://devza.com/tests/tasks/'
 };
 
 /*

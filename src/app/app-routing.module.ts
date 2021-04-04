@@ -1,10 +1,37 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { SearchTasksComponent } from './components/search-tasks/search-tasks.component';
+import { TaskBoardComponent } from './components/task-board/task-board.component';
+import { TaskDetailsComponent } from './components/task-details/task-details.component';
 
-const routes: Routes = [];
+const routes: Routes = [
+  {
+    path: '',
+    redirectTo: 'task-board',
+    pathMatch: 'full',
+  },
+  {
+    path: 'task-board',
+    component: TaskBoardComponent,
+  },
+  {
+    path: 'tasks/create',
+    component: TaskDetailsComponent,
+    pathMatch: 'full',
+  },
+  {
+    path: 'tasks/edit/:id',
+    component: TaskDetailsComponent,
+  },
+  {
+    path: 'tasks/search',
+    component: SearchTasksComponent,
+    pathMatch: 'full',
+  },
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

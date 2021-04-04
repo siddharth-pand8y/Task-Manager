@@ -1,0 +1,103 @@
+body {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--color-primary);
+  #Task-Detail-Container {
+    width: 700px;
+    height: fit-content;
+    background: #ffffff 0% 0% no-repeat padding-box;
+    box-shadow: 0px 0px 12px #00000029;
+    border-radius: 20px;
+    z-index: 1;
+    .TaskId-DeleteTask-Option {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin: 35px 35px -20px 35px;
+      p {
+        text-align: left;
+        font: normal normal medium 15px/23px Poppins;
+        letter-spacing: 0.3px;
+      }
+      #DeleteButton {
+          color: var(--color-high-priority-contrast);
+          background-color: #fff;
+          border: 1px solid var(--color-high-priority-contrast);
+          svg {
+              margin-right: 10px;
+          }
+      }
+    }
+    form {
+      #Title-Input {
+        outline: none;
+        border: none;
+        border-top: 1px solid #fff;
+
+        border-bottom: 1px solid var(--color-primary);
+        width: 630px;
+        height: 50px;
+        margin: 35px;
+        font-weight: 600;
+        font-size: 23px;
+        letter-spacing: 0.5px;
+        color: var(--color-primary);
+        transition: all 0.2s ease-in;
+        &:focus {
+          border-top: 1px solid var(--color-primary);
+        }
+        &::placeholder {
+          font-weight: 500;
+          color: var(--color-primary);
+        }
+      }
+      #Task-Details {
+        margin: 35px;
+
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: left;
+        mat-form-field {
+          margin: 20px auto 20px 0;
+          width: 400px;
+        }
+      }
+      #Task-Creation-Info {
+        color: var(--color-primary);
+        font-family: var(--font-primary);
+        font-size: 15px;
+        margin: 0 35px;
+        border-top: 1px solid var(--color-primary-light);
+        padding-top: 17px;
+      }
+      #Action-Button {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin: 35px;
+      }
+    }
+  }
+  #Loader {
+      position: absolute;
+      background-color: #ffffff80;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      z-index: 100;
+      p {
+          font-size: 30px;
+          margin-bottom: 30px;
+      }
+      mat-progress-bar {
+          width: 40vw;
+      }
+  }
+}

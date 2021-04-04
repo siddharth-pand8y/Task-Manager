@@ -1,1 +1,67 @@
 /* You can add global styles to this file, and also import other style files */
+
+:root {
+  --font-primary: "Poppins";
+  --color-primary: #af8b6e;
+  --color-primary-light: #fff9f3;
+  --color-primary-contrast: #f0e8e1;
+  --color-high-priority-background: #fff3f3;
+  --color-high-priority-contrast: #ff7777;
+  --color-medium-priority-background: #f5fff3;
+  --color-medium-priority-contrast: #74d265;
+  --color-low-priority-background: #f3faff;
+  --color-low-priority-contrast: #72b6e9;
+}
+
+@import "~@angular/material/theming";
+@import '../node_modules/@angular/material/theming';
+@include mat-core();
+
+// Define a custom typography config that overrides the font-family as well as the
+// `headlines` and `body-1` levels.
+$custom-typography: mat-typography-config(
+  $font-family: var(--font-primary),
+);
+@include mat-base-typography($custom-typography);
+
+// Override typography for a specific Angular Material components.
+@include mat-checkbox-typography($custom-typography);
+
+// Override typography for all Angular Material, including mat-base-typography and all components.
+@include angular-material-typography($custom-typography);
+@include mat-core($custom-typography);
+
+$primary: (
+  Main: #af8b6e,
+  Light: #e2bb9c,
+  Dark: #7e5e43,
+  contrast: (
+    Main: #fff9f3,
+    Light: #000,
+    Dark: #fff,
+  ),
+);
+$accent: (
+  Main: #fff9f3,
+  Light: #ffffff,
+  Dark: #af8b6e,
+  contrast: (
+    Main: #af8b6e,
+    Light: #fff,
+    Dark: #fff,
+  ),
+);
+$warn: $mat-red;
+
+$custom-theme-primary: mat-palette($primary, Main, Light, Dark);
+$custom-theme-accent: mat-palette($accent, Main, Light, Dark);
+$custom-theme-warn: mat-palette($warn, A200, A400, A700);
+
+
+$custom-theme: mat-light-theme(
+  $custom-theme-primary,
+  $custom-theme-accent,
+  $custom-theme-warn
+);
+
+@include angular-material-theme($custom-theme);
