@@ -7,12 +7,8 @@ import { TaskDetailsComponent } from './components/task-details/task-details.com
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'task-board',
-    pathMatch: 'full',
-  },
-  {
-    path: 'task-board',
     component: TaskBoardComponent,
+    pathMatch: 'full',
   },
   {
     path: 'tasks/create',

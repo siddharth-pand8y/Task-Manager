@@ -19,7 +19,7 @@ export class TaskDetailsComponent implements OnInit {
   taskForm = this.formBuilder.group({
     title: ['', [Validators.required, Validators.maxLength(256)]],
     assignee: [''],
-    dueDate: [''],
+    dueDate: [{value: '', disabled: true}],
     priority: ['1'],
   });
   taskEdit: boolean;
@@ -187,7 +187,6 @@ export class TaskDetailsComponent implements OnInit {
 
     this.taskManagerService.getAPI('list').subscribe(
       (res: TaskAPIModel) => {
-        console.log('Get Task Lists', res.tasks);
         if (res.status === 'success' && res.tasks && res.tasks.length > 0) {
           this.taskInfo = res.tasks.filter((a) => a.id === this.taskId)[0];
           this.taskForm.patchValue({

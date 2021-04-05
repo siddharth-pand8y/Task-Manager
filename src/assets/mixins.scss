@@ -1,0 +1,50 @@
+@mixin searchInput {
+  background-color: var(--color-primary-light);
+  color: var(--color-primary);
+  width: 100%;
+  height: 70%;
+  border-radius: 10px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  border: 1px solid var(--color-primary-light);
+  transition: all 0.2s ease-in;
+  &:focus-within {
+    border: 1px solid var(--color-primary);
+  }
+  svg {
+    margin: 0 15px;
+  }
+  input {
+    width: calc(88vw - 50px);
+    height: 96%;
+    border: none;
+    outline: none;
+    background: none;
+    color: var(--color-primary);
+    font-size: 15px;
+    &::placeholder {
+      color: var(--color-primary);
+    }
+  }
+}
+
+@mixin Loader {
+  position: absolute;
+  background-color: #ffffff80;
+  width: 100%;
+  height: 70vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+  p {
+    color: var(--color-primary);
+    font-size: 30px;
+    margin-bottom: 30px;
+  }
+  mat-progress-bar {
+    width: 40vw;
+  }
+}

@@ -36,7 +36,6 @@ export class TaskBoardComponent {
   fetchTaskList(): void {
     this.taskManagerService.getAPI('list').subscribe(
       (res: TaskAPIModel) => {
-        console.log('Get Task Lists', res.tasks);
         if (res.status === 'success' && res.tasks && res.tasks.length > 0) {
           this.taskList = res.tasks;
           this.segregateTasksOnPriority(res.tasks);
@@ -93,8 +92,6 @@ export class TaskBoardComponent {
         event.previousIndex,
         event.currentIndex
       );
-      console.log('Event', event);
-      console.log(event.container.id);
       this.updateTaskPriorityArrays(
         event.container.id.charAt(0),
         event.currentIndex
@@ -113,11 +110,9 @@ export class TaskBoardComponent {
     const formData = new FormData();
     formData.append('taskid', taskId);
     formData.append('priority', priority);
-    console.log(formData);
     this.taskManagerService.postAPI('update', formData).subscribe(
       (res: TaskAPIModel) => {
         const userListApiResponse: TaskAPIModel = res;
-        console.log('Change Priority', userListApiResponse);
         if (userListApiResponse.status !== 'success') {
           this.refreshPage();
           console.error('Task Update API Error', userListApiResponse.error);
