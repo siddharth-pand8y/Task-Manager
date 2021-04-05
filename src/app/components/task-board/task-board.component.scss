@@ -69,12 +69,13 @@ body {
           h2 {
             font-family: var(--font-primary);
             color: var(--color-primary);
-            font-size: 25px;
+            font-size: 18px;
             font-weight: 600;
             letter-spacing: 1px;
             margin-bottom: 0;
           }
           output {
+            font-size: 15px;
             border-radius: 5px;
             background-color: var(--color-primary);
             color: var(--color-primary-light);

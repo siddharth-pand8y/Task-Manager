@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { TaskManagerService } from '../../service/task-manager.service';
+import { TaskManagerService } from '../../service/task-manager/task-manager.service';
 import {
   TaskCreationAPIModel,
   TaskAPIModel,

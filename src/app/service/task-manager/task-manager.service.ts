@@ -1,11 +1,10 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable, throwError } from 'rxjs';
-import { catchError, retry } from 'rxjs/operators';
+import { throwError } from 'rxjs';
+import { catchError } from 'rxjs/operators';
 import { HttpHeaders, HttpErrorResponse } from '@angular/common/http';
-import { environment } from '../../environments/environment';
-
-import { TaskAPIModel } from '../model/api.model';
+import { environment } from '../../../environments/environment';
+import { TaskAPIModel } from '../../model/api.model';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Injectable({

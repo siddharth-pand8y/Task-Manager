@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { TaskManagerService } from '../../service/task-manager.service';
+import { TaskManagerService } from '../../service/task-manager/task-manager.service';
 import { TaskAPIModel, Task, User } from '../../model/api.model';
 import {
   CdkDragDrop,

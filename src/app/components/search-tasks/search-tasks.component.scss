@@ -10,10 +10,28 @@
   }
 }
 
+#Result-Count {
+  margin-left: 6vw;
+  color: var(--color-primary);
+  font-weight: 500;
+  font-family: var(--font-primary);
+}
+
 main {
   border-top: 1px solid var(--color-primary);
   box-sizing: border-box;
   min-height: 90vh;
+  #Task-Board-Button {
+    margin: 1vh auto 0 5vw;
+    background: #ffffff;
+    color: var(--color-primary);
+    svg {
+      margin-right: 5px;
+      #Path_14, #Path_15 {
+        fill: var(--color-primary);
+      }
+    }
+  }
   #Search-Filter-Sort-Container {
     margin: 1vh 5vw;
     height: 7vh;

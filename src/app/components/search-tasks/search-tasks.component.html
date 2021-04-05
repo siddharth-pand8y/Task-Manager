@@ -1,4 +1,35 @@
 <main>
+  <button
+    mat-raised-button
+    color="primary"
+    id="Task-Board-Button"
+    routerLink="/"
+  >
+    <svg
+      id="left-arrow"
+      xmlns="http://www.w3.org/2000/svg"
+      width="18.337"
+      height="18.337"
+      viewBox="0 0 18.337 18.337"
+    >
+      <g id="Group_30" data-name="Group 30">
+        <g id="Group_29" data-name="Group 29">
+          <path
+            id="Path_14"
+            data-name="Path 14"
+            d="M9.169,0a9.169,9.169,0,1,0,9.169,9.169A9.169,9.169,0,0,0,9.169,0Zm0,17.191a8.023,8.023,0,1,1,8.023-8.023A8.023,8.023,0,0,1,9.169,17.191Z"
+          />
+          <path
+            id="Path_15"
+            data-name="Path 15"
+            d="M164.738,116.8l-4.584,4.584a.573.573,0,0,0,0,.808l4.584,4.584.808-.814-4.177-4.177,4.177-4.178Z"
+            transform="translate(-154.257 -112.617)"
+          />
+        </g>
+      </g>
+    </svg>
+    Task Board
+  </button>
   <section id="Search-Filter-Sort-Container">
     <div id="Search-Input-Container">
       <svg
@@ -29,7 +60,13 @@
     </div>
   </section>
   <section id="Search-Result-Container">
-    <div id="Table">
+    <div id="Result-Count" *ngIf="this.taskListAPI === 'success'">
+      {{ this.filterList.length }} task<span *ngIf="filterList.length > 0"
+        >s</span
+      >
+      found
+    </div>
+    <div id="Table" *ngIf="filterList.length > 0">
       <table mat-table [dataSource]="filterList" class="mat-elevation-z8">
         <!--- Note that these columns can be defined in any order.
                   The actual rendered columns are set as a property on the row definition" -->

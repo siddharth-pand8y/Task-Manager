@@ -1,8 +1,7 @@
-import { query } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { TaskManagerService } from 'src/app/service/task-manager.service';
+import { TaskManagerService } from 'src/app/service/task-manager/task-manager.service';
 import { TaskAPIModel, Task, User } from '../../model/api.model';
 
 @Component({
@@ -32,6 +31,9 @@ export class SearchTasksComponent implements OnInit {
     this.fetchTaskList();
     this.activatedRoute.queryParams.subscribe((query) => {
       this.searchInput.setValue(query.q);
+      this.search();
+    });
+    this.searchInput.valueChanges.subscribe(value => {
       this.search();
     });
   }
