@@ -1,3 +1,25 @@
 // @import "../assets/reset.scss";
 
+#Orientation-Message {
+  display: none;
+}
 
+@media screen and (max-width: 900px), (orientation: portrait) {
+  #Application-View {
+    display: none;
+  }
+  #Orientation-Message {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3vw;
+    line-height: 4vw;
+    font-weight: 600;
+    font-family: var(--font-primary);
+    height: 80vh;
+    span {
+        margin: 40px;
+        text-align: center;
+    }
+  }
+}

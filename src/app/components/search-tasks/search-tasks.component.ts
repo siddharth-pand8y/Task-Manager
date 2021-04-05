@@ -13,7 +13,9 @@ import { TaskAPIModel, Task, User } from '../../model/api.model';
 export class SearchTasksComponent implements OnInit {
   searchInput = new FormControl('');
   taskList: Task[] = [];
+  filterList: Task[] = [];
   taskListAPI = '';
+  filterListAPI = '';
   displayedColumns = [
     'title',
     'assigned_to',
@@ -27,9 +29,10 @@ export class SearchTasksComponent implements OnInit {
     private taskManagerService: TaskManagerService,
     private activatedRoute: ActivatedRoute
   ) {
+    this.fetchTaskList();
     this.activatedRoute.queryParams.subscribe((query) => {
       this.searchInput.setValue(query.q);
-      this.fetchTaskList();
+      this.search();
     });
   }
 
@@ -57,7 +60,8 @@ export class SearchTasksComponent implements OnInit {
     );
   }
   search() {
-    this.taskList = this.taskList.filter(
+    this.filterList = [];
+    this.filterList = this.taskList.filter(
       (a) =>
         a.message.toLowerCase().search(this.searchInput.value.toLowerCase()) !==
         -1

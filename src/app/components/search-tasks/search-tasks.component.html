@@ -30,7 +30,7 @@
   </section>
   <section id="Search-Result-Container">
     <div id="Table">
-      <table mat-table [dataSource]="taskList" class="mat-elevation-z8">
+      <table mat-table [dataSource]="filterList" class="mat-elevation-z8">
         <!--- Note that these columns can be defined in any order.
                   The actual rendered columns are set as a property on the row definition" -->
 
@@ -79,5 +79,9 @@
         <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
       </table>
     </div>
+  </section>
+  <section id="Loading-Board" *ngIf="this.taskListAPI === 'Initiated'">
+    <p>Loading ...</p>
+    <mat-progress-bar mode="indeterminate"></mat-progress-bar>
   </section>
 </main>

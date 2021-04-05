@@ -63,8 +63,11 @@ export class TaskDetailsComponent implements OnInit {
 
     const date = this.formatDate(this.taskForm.controls['dueDate'].value);
 
-    if (this.checkEmptyInputs('dueDate') && date) {
-      formData.append('due_date', date);
+    if (this.checkEmptyInputs('dueDate') ) {
+      const date = this.formatDate(this.taskForm.controls['dueDate'].value);
+      if(date) {
+        formData.append('due_date', date);
+      }
     }
     if (this.checkEmptyInputs('assignee')) {
       formData.append('assigned_to', this.taskForm.controls['assignee'].value);

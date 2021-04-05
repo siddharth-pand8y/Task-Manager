@@ -337,7 +337,7 @@
                 "
                 >Created on {{ task.created_on | date: "dd-MMM-yyyy" }}</span
               >
-              <span class="Draggable-Icon" cdkDragHandle
+              <span class="Draggable-Icon" cdkDragHandle style="cursor: move"
                 ><svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="19"
@@ -675,7 +675,7 @@
                 "
                 >Created on {{ task.created_on | date: "dd-MMM-yyyy" }}</span
               >
-              <span class="Draggable-Icon" cdkDragHandle
+              <span class="Draggable-Icon" cdkDragHandle style="cursor: move"
                 ><svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="19"
@@ -1013,7 +1013,7 @@
                 "
                 >Created on {{ task.created_on | date: "dd-MMM-yyyy" }}</span
               >
-              <span class="Draggable-Icon" cdkDragHandle
+              <span class="Draggable-Icon" cdkDragHandle style="cursor: move"
                 ><svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="19"
@@ -1134,6 +1134,10 @@
           </div>
         </div>
       </div>
+    </section>
+    <section id="Loading-Board" *ngIf="this.taskListAPI === 'Initialized'">
+      <p>Loading ...</p>
+      <mat-progress-bar mode="indeterminate"></mat-progress-bar>
     </section>
   </main>
   <!-- <aside>
